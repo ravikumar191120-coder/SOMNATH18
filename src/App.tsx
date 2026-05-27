@@ -32,19 +32,25 @@ import BulbGame from "./components/BulbGame";
 import LetterEnvelope from "./components/LetterEnvelope";
 
 export default function App() {
-  // Config state backed by LocalStorage
+  // Config state backed by LocalStorage with automatic stale config legacy migration
   const [config, setConfig] = useState<AppConfig>(() => {
     const saved = localStorage.getItem("boki_web_config");
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        // Automatically upgrade/migrate old default soundhelix soundtracks to the new lovely Catbox track
+        if (parsed && (!parsed.musicUrl || parsed.musicUrl.includes("soundhelix"))) {
+          parsed.musicUrl = ROMANTIC_LOFI_URL;
+          parsed.musicTitle = "Pragti's Special Track (Catbox Tune) 🎵";
+        }
+        return parsed;
       } catch (e) {
         console.error("Error loading config", e);
       }
     }
     return {
       musicUrl: ROMANTIC_LOFI_URL,
-      musicTitle: "Cozy Warm Light Lofi (Aesthetic)",
+      musicTitle: "Pragti's Special Track (Catbox Tune) 🎵",
       customPhotos: {},
     };
   });
@@ -105,7 +111,7 @@ export default function App() {
     ? BIRTHDAY_NOTES 
     : BIRTHDAY_NOTES.filter(n => n.category === activeNoteFilter);
 
-  // Profile img fallback
+  // Profile img fallback (using spotlight_now photo so it is fully customizable in sync!)
   const profileImageUrl = config.customPhotos.spotlight_now || BIRTHDAY_SPOTLIGHTS[1].defaultUrl;
 
   return (
@@ -199,7 +205,7 @@ export default function App() {
           <span className="w-1.5 h-1.5 rounded-full bg-rose-450" />
           <span>SUGI</span>
           <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-          <span>BOKI</span>
+          <span>POOCHKI</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           <span>✨ SHINING STAR</span>
         </div>

@@ -30,19 +30,21 @@ export default function MusicPlayer({
   // Sound generator effect nodes (drifting music notes)
   const [notes, setNotes] = useState<{ id: number; char: string; left: number; delay: number }[]>([]);
 
+  // Synced volume changes dynamically
   useEffect(() => {
-    // Re-initialize audio node when URL changes
     if (audioRef.current) {
-      audioRef.current.pause();
+      audioRef.current.volume = isMuted ? 0 : volume;
     }
-    
-    // Check if the URL is relative or absolute
-    audioRef.current = new Audio(musicUrl);
-    audioRef.current.loop = true;
-    audioRef.current.volume = isMuted ? 0 : volume;
-    setErrorMsg(null);
+  }, [volume, isMuted]);
 
-    // If it was playing, resume playing the new URL
+  // Handle music track changes securely and trigger reload
+  useEffect(() => {
+    if (!audioRef.current) return;
+    setErrorMsg(null);
+    
+    // Changing standard element source triggers dynamic reload
+    audioRef.current.load();
+    
     if (isPlaying) {
       const playPromise = audioRef.current.play();
       if (playPromise !== undefined) {
@@ -53,13 +55,16 @@ export default function MusicPlayer({
         });
       }
     }
+  }, [musicUrl]);
 
+  // Clean-up play state on dismantle
+  useEffect(() => {
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
       }
     };
-  }, [musicUrl]);
+  }, []);
 
   // Handle Play / Pause
   const togglePlay = () => {
@@ -254,6 +259,14 @@ export default function MusicPlayer({
           </div>
         )}
       </div>
+
+      {/* Robust DOM Audio element with ref mapping */}
+      <audio
+        ref={audioRef}
+        src={musicUrl}
+        loop
+        preload="auto"
+      />
     </div>
   );
 }

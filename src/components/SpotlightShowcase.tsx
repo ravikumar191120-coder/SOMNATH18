@@ -70,7 +70,7 @@ export default function SpotlightShowcase({ photos, customPhotos }: SpotlightSho
                 {/* Always looping birthday overlay */}
                 <div className="absolute top-2 left-2 px-2 py-1 bg-white/75 backdrop-blur-xs rounded-full border border-neutral-900/10 text-[9px] font-mono text-neutral-800 font-bold flex items-center gap-1">
                   <Heart className="w-2.5 h-2.5 text-rose-500 fill-rose-500 animate-pulse" />
-                  {isChildhood ? "Chotu Boki" : "Sweet Queen"}
+                  {isChildhood ? "Chotu Pragti" : "Sweet Sugi"}
                 </div>
               </div>
 

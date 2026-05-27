@@ -5,15 +5,15 @@
 
 import { BirthdayNote, PhotoPolaroid, PrintableSticker } from "./types";
 
-export const DEFAULT_MUSIC_URL = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; 
+export const DEFAULT_MUSIC_URL = "https://files.catbox.moe/ezs6m2.m4a"; 
 export const CUTE_INSTRUMENTAL_URL = "https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3"; // beautiful soft peaceful melody
 export const HAPPY_LOFI_URL = "https://assets.mixkit.co/music/preview/mixkit-playful-kitty-33.mp3"; // very cute playful cat lofi song
-export const ROMANTIC_LOFI_URL = "https://assets.mixkit.co/music/preview/mixkit-warm-light-34.mp3"; // very cozy loving lofi
+export const ROMANTIC_LOFI_URL = "https://files.catbox.moe/ezs6m2.m4a"; // User's customized background track
 
 export const PRESET_SONGS = [
-  { id: "cozy", name: "Cozy Warm Light Lofi (Aesthetic)", url: ROMANTIC_LOFI_URL },
+  { id: "cozy", name: "Pragti's Special Track (Catbox Tune) 🎵", url: ROMANTIC_LOFI_URL },
   { id: "lofi", name: "Dreamy Playful Kitty (Cute Beats)", url: HAPPY_LOFI_URL },
-  { id: "dreamy", name: "Boki's Sweet Soft Piano Instrumental", url: CUTE_INSTRUMENTAL_URL },
+  { id: "dreamy", name: "Sweet Soft Beautiful Melodic Piano", url: CUTE_INSTRUMENTAL_URL },
 ];
 
 // Spotlight Photos definition (Childhood vs Now)
@@ -27,13 +27,13 @@ export interface SpotlightPhoto {
 export const BIRTHDAY_SPOTLIGHTS: SpotlightPhoto[] = [
   {
     id: "spotlight_childhood",
-    defaultUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIzbzUzdThsd3B2bnFlbmxtcHptYXh2eDkxeDRwdzhsczBpZzM3dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/qas0w6FvOfpCg/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/zfn78v.jpeg",
     caption: "How It Started... 👶🏼✨",
     subtitle: "Chhoti Pragti: Full of cute dreams & sweet habits!"
   },
   {
     id: "spotlight_now",
-    defaultUrl: "https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNscndmOHZ1YXJtMXRjMXR2ZDN0YXIwaTR5ZGx6Yzh5cWZ4ZHQxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbhswvE8Y8jmOk/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/aqow1a.jpeg",
     caption: "How It's Going! 👑🎂",
     subtitle: "Super Aesthetic Queen Pragti ruling with style!"
   }
@@ -50,25 +50,25 @@ export interface LoopingSnap {
 export const LOOPING_SNAPS: LoopingSnap[] = [
   {
     id: "snap_1",
-    defaultUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDBzOGN2NXhpdThwbTdtYWlnaTFubmNid2w1dHkyMHltdjIxeGJjdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Ym64m8mId0XQO3NBSM/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/8x3m7n.mp4",
     caption: "The Ultimate Drama Mode 💅",
     tease: "Pehle 45 minutes spending on deciding the perfect angle, and then 'Yaar mood kharab ho gya main nahi le rahi photu!'"
   },
   {
     id: "snap_2",
-    defaultUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDNscndmOHZ1YXJtMXRjMXR2ZDN0YXIwaTR5ZGx6Yzh5cWZ4ZHQxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbhswvE8Y8jmOk/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/u8ev1c.mp4",
     caption: "Perpetually Exhausted cutie 🥱",
     tease: "Sleeping for a solid 11 hours only to complain: 'God why am I so tired... lagta hai backache ho rha h!' 😭"
   },
   {
     id: "snap_3",
-    defaultUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzgxNHI0cWdtY3E0bXZvNXZic24zdTh2YzVpdXAwajN0ZXB0ZDF3MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5K4vXfDyw0g4uQp6dB/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/bk2avz.mp4",
     caption: "Navigation Levels: 0.1% 🧭",
     tease: "Sugi inside her own kitchen: *needs Google maps* to locate the spice rack, or enters the neighbor's room with full confidence!"
   },
   {
     id: "snap_4",
-    defaultUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGx0dnAzejRrdmlkbHRzZmZidXh5ajFwbnV1bnR2OGQ4cDUyaDBmeCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/JYsY6db5mHov7Fj2L5/giphy.gif",
+    defaultUrl: "https://files.catbox.moe/iosjgp.mp4",
     caption: "2 AM Instagram Spammer 📱",
     tease: "Continuous pinging sounds at midnight. Yes, she found 47 brainrot kitten videos that she *MUST* share immediately."
   }
