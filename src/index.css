@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fredoka:wght@300;400;500;600;700&family=Patrick+Hand&family=Slackside+One&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-handwritten: "Caveat", cursive;
+  --font-cute: "Fredoka", sans-serif;
+  --font-body: "Patrick Hand", sans-serif;
+  --font-scribble: "Slackside One", cursive;
+
+  --animate-sparkle: sparkle 1.5s ease-in-out infinite;
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-float-medium: float-medium 5s ease-in-out infinite;
+  --animate-float-fast: float-fast 3s ease-in-out infinite;
+
+  @keyframes sparkle {
+    0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
+    50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
+}
+
+/* Custom scrapbook effects */
+.scrapbook-paper {
+  background-color: #fbf9f3;
+  background-image: 
+    radial-gradient(#e5dfd3 1px, transparent 1px),
+    radial-gradient(#e5dfd3 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.notebook-paper {
+  background: #fefff2;
+  background-image: linear-gradient(#e4f0dc .1rem, transparent .1rem);
+  background-size: 100% 26px;
+  line-height: 26px;
+}
+
+.grid-paper {
+  background-color: #fafbfc;
+  background-image: 
+    linear-gradient(#f0f2f5 1px, transparent 1px),
+    linear-gradient(90deg, #f0f2f5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.tape-effect {
+  background: rgba(254, 252, 191, 0.6);
+  backdrop-filter: blur(1px);
+  border-left: 1px dashed rgba(0,0,0,0.1);
+  border-right: 1px dashed rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.card-shadow {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.hand-drawn-border {
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: 2px solid #2b2b2b;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #fcfbf7;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2dcd0;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Float utilities */
+.float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+.float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+}
+.float-fast {
+  animation: float-fast 3s ease-in-out infinite;
+}

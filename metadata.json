@@ -1,0 +1,6 @@
+{
+  "name": "Birthday Wish for Pragti",
+  "description": "An interactive scrapbook-style birthday wish website for Pragti (Boki/Sugi) filled with playful teasing, cute animations, music, and polaroids.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
